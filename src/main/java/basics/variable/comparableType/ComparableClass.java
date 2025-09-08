@@ -126,13 +126,74 @@ public class ComparableClass {
         });
         System.out.println(students1);
 
-        students1.sort((o1,o2)->{
-            int temp = o1.rollNo-o2.rollNo;
-            if (temp==0){
+        students1.sort((o1, o2) -> {
+            int temp = o1.rollNo - o2.rollNo;
+            if (temp == 0) {
                 return o1.name.compareTo(o2.name);
             }
             return temp;
         });
         System.out.println(students1);
+
+        // sorting an array
+
+        int[][] arr = {
+                {7, 9, 9},
+                {7, 9, 6},
+                {1, 5, 6},
+        };
+
+        System.out.println("Original array");
+
+        for (int[] a : arr) {
+            for (int b : a) {
+                System.out.print(b + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println("Sorting by 0th index");
+        Arrays.sort(arr, (arr1, arr2) -> {
+            return arr1[0] - arr2[0];
+        });
+
+        for (int[] a : arr) {
+            for (int b : a) {
+                System.out.print(b + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println("Sorting by ith index");
+        /*
+        Pair Compared	First Difference	Result
+        [7, 9, 9] vs [7, 9, 6]	9 - 6 = 3	[7, 9, 6] < [7, 9, 9]
+        [7, 9, 6] vs [1, 5, 6]	7 - 1 = 6	[1, 5, 6] < [7, 9, 6]
+        [7, 9, 9] vs [1, 5, 6]	7 - 1 = 6	[1, 5, 6] < [7, 9, 9]
+
+        Sorting by ith index
+            1 5 6
+            7 9 6
+            7 9 9
+         */
+        Arrays.sort(arr, (arr1, arr2) -> {
+            int l = arr1.length;
+            int temp = 0;
+            for (int i = 0; i < l; i++) {
+                temp = arr1[i] - arr2[i];
+                if (temp != 0) return temp;
+            }
+            return Integer.compare(arr1.length, arr2.length);
+        });
+
+        for (int[] a : arr) {
+            for (int b : a) {
+                System.out.print(b + " ");
+            }
+            System.out.println();
+        }
+
+
     }
 }
