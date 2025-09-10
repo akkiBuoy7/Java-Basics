@@ -19,7 +19,7 @@ public class Main {
 
         // Imperative Approach
         /*
-        Here we explicitely declared everything and wrote boiler code.
+        Here we explicitly declared everything and wrote boiler code.
          */
         List<Person> females = new ArrayList<>();
 
