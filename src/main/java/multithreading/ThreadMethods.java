@@ -13,11 +13,11 @@ public class ThreadMethods {
 
 class ThreadPriority {
     public static void main(String[] args) throws InterruptedException {
-        ThreadN threadl = new ThreadN("Low priority");
+        ThreadP threadl = new ThreadP("Low priority");
         threadl.setPriority(Thread.MIN_PRIORITY);
-        ThreadN threadm = new ThreadN("Medium priority");
+        ThreadP threadm = new ThreadP("Medium priority");
         threadm.setPriority(Thread.NORM_PRIORITY);
-        ThreadN threadh = new ThreadN("High priority");
+        ThreadP threadh = new ThreadP("High priority");
         threadh.setPriority(Thread.MAX_PRIORITY);
 
         threadl.start();
@@ -55,8 +55,8 @@ class ThreadM extends Thread {
     }
 }
 
-class ThreadN extends Thread {
-    public ThreadN(String name) {
+class ThreadP extends Thread {
+    public ThreadP(String name) {
         super(name);
     }
 
